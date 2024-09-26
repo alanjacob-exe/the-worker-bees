@@ -5,17 +5,20 @@ $phone: 300px
 .movie-container
     height: 100%
     overflow: hidden
-    padding: 0rem 15rem
     display: flex
     background: #fdf9f1
 
 .width-full
     width: 100% !important
 
+.overflow-styles
+    padding: 0rem 15rem
+
 @media (min-width: $tablet) and (max-width: $tablet-lg)
     .movie-container
         padding: 0rem 1.5rem
 
 @media (min-width: $phone) and (max-width: $tablet)
-    .movie-container
-        padding: 0rem 1.5rem
+    .overflow-styles
+        padding: 1rem 1.5rem
+        // margin: 1rem 0rem
