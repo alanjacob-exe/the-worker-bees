@@ -6,14 +6,13 @@
     // background-color: #000
     position: relative
     display: flex
-    flex-direction: row
 
 .image
     position: absolute
     top: 0
     left: 0
     width: 50%
-    height: auto
+    height: fit-content
     z-index: -1
 
 .hero-section
@@ -23,7 +22,7 @@
     flex-direction: row
 
 .caption
-    width: 50%
+    width: 60%
     gap: 2rem
     display: flex
     flex-direction: column
@@ -34,7 +33,7 @@
         font-family: Alda
         line-height: 2.5rem
     div
-        width: 100%
+        width: 90%
         font-size: 1.25rem
         font-family: Sofia
 
@@ -69,13 +68,15 @@ $tablet-lg: 1024px
 $phone: 300px
 
 @media (min-width: $tablet) and (max-width: $tablet-lg)
-    .grid-container
-        // padding: 0rem 1.5rem
+    .home-container
+        flex-direction: column
+        // padding: 2rem 0rem
+        overflow-y: hidden
 
 @media (min-width: $phone) and (max-width: $tablet)
     .home-container
         flex-direction: column
-        padding: 2rem 0rem
+        // padding: 2rem 0rem
 
     .hero-section
         padding: 0rem 1.5rem
@@ -83,6 +84,8 @@ $phone: 300px
 
     .caption-container
         width: 100%
+        margin-top: 3rem
+
         img
             width: 15rem
 

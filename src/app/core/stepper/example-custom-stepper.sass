@@ -1,5 +1,4 @@
 .example-container
-
   width: 100%
 
 .example-step-navigation-bar
@@ -80,3 +79,16 @@
   background: transparent
   border: none
   cursor: pointer
+
+$tablet: 768px
+$tablet-lg: 1024px
+$phone: 300px
+
+@media (min-width: $tablet) and (max-width: $tablet-lg)
+  .grid-container
+        // padding: 0rem 1.5rem
+
+@media (min-width: $phone) and (max-width: $tablet)
+  .generic-button-styles
+    width: 11rem
+    height: 3rem
