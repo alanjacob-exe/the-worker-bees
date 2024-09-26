@@ -1,0 +1,18 @@
+<div class="movie-container">
+  <div class="movie-heading">
+    My favorite movie genre is:
+    <span>(Check all that apply)</span>
+    <div [formGroup]="form">
+      <div class="grid-container" formGroupName="favoriteCategory">
+        <mat-checkbox
+          *ngFor="let genre of genres"
+          [value]="genre.value"
+          [formControlName]="genre.key"
+          class="checkbox-styles"
+        >
+          <span class="checkbox-label">{{ genre.label }}</span>
+        </mat-checkbox>
+      </div>
+    </div>
+  </div>
+</div>

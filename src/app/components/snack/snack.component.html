@@ -1,0 +1,15 @@
+<div class="dev-container">
+  <div class="dev-heading">
+    What’s your favorite movie snack?
+    <mat-radio-group
+      class="check-container"
+      aria-label="How long have you been an angular developer?"
+    >
+      <div *ngFor="let snack of snacks">
+        <mat-radio-button [value]="snack.value">
+          <span class="label-styles">{{ snack.label }}</span></mat-radio-button
+        >
+      </div>
+    </mat-radio-group>
+  </div>
+</div>

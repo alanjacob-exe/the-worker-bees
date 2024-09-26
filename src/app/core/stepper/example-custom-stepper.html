@@ -1,0 +1,30 @@
+<section class="example-container">
+  <div class="example-step-navigation-bar">
+    @for (step of steps; track step; let i = $index) {
+    <button
+      class="example-step"
+      [class.example-active]="selectedIndex >= i"
+      (click)="selectStepByIndex(i)"
+    ></button>
+    }
+  </div>
+  <div class="step-indicator">
+    {{ selectedIndex + 1 }} of {{ steps.length }}
+  </div>
+
+  <div [ngTemplateOutlet]="selected ? selected.content : null"></div>
+  <div class="stepper-navigation-holder">
+    <div *ngIf="selectedIndex === 0">
+      <generic-button
+        label="Exit Assessment"
+        styleClass="link"
+        navigateTo="/"
+      ></generic-button>
+    </div>
+
+    <div *ngIf="selectedIndex !== 0">
+      <button class="link" cdkStepperPrevious>Previous Question</button>
+    </div>
+    <button class="generic-button-styles primary" cdkStepperNext>Next</button>
+  </div>
+</section>

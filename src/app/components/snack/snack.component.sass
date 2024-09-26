@@ -1,0 +1,48 @@
+$tablet: 768px
+$tablet-lg: 1024px
+$phone: 300px
+
+.dev-container
+    height: 100%
+    margin-top: 2.5rem
+    overflow: hidden
+
+.dev-heading
+    font-size: 1.75rem
+    font-family: Sofia
+    display: flex
+    flex-direction: column
+    gap: 0.5rem
+
+    span
+        color: #363636
+        font-size: 1rem
+    div
+        margin-top: 2.125rem
+
+.radio-container
+    display: flex
+    flex-direction: column
+
+.check-container
+    width: 100%
+    // background: #000
+    display: grid
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    gap: 20px 5px
+
+.label-styles
+    font-size: 1.25rem
+    font-family: Sofia
+
+@media (min-width: $tablet) and (max-width: $tablet-lg)
+    .grid-container
+        // padding: 0rem 1.5rem
+
+@media (min-width: $phone) and (max-width: $tablet)
+    .check-container
+        grid-template-columns: repeat(1, minmax(0, 1fr))
+        gap: 10px 5px
+    .dev-heading
+        div
+            margin-top: 1rem

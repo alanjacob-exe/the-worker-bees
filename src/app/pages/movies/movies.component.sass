@@ -1,0 +1,21 @@
+$tablet: 768px
+$tablet-lg: 1024px
+$phone: 300px
+
+.movie-container
+    height: 100%
+    overflow: hidden
+    padding: 0rem 15rem
+    display: flex
+    background: #fdf9f1
+
+.width-full
+    width: 100% !important
+
+@media (min-width: $tablet) and (max-width: $tablet-lg)
+    .movie-container
+        padding: 0rem 1.5rem
+
+@media (min-width: $phone) and (max-width: $tablet)
+    .movie-container
+        padding: 0rem 1.5rem

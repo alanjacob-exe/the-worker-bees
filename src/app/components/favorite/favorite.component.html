@@ -1,0 +1,44 @@
+<div class="dev-container">
+  <div class="dev-heading">
+    What is your favorite movie?
+    <span
+      >(If you have more than one favorite movie, select Add Favorite Movie to
+      enter its details. )</span
+    >
+  </div>
+
+  <div class="grid-container">
+    <div class="input-container">
+      <span>Title</span>
+      <input class="input-styles" placeholder="RoboCop" />
+    </div>
+    <div class="input-container">
+      <span>Year of Release</span>
+      <input
+        class="input-styles"
+        placeholder="1987 not 2014, you monster"
+        aria-label="Year of Release"
+      />
+    </div>
+  </div>
+  <div class="optional">
+    <button
+      class="addmore-button"
+      label="Add Favorite Movie"
+      aria-label="Add Favorite Movie"
+      (click)="toggleAdditionalFields()"
+    >
+      {{ showAdditionalFields ? "Hide Movie" : "Add Another Movie" }}
+    </button>
+    <div *ngIf="showAdditionalFields" class="grid-container">
+      <div class="input-container">
+        <span>Title</span>
+        <input class="input-styles" placeholder="RoboCop" />
+      </div>
+      <div class="input-container">
+        <span>Year of Release</span>
+        <input class="input-styles" placeholder="1987 not 2014, you monster" />
+      </div>
+    </div>
+  </div>
+</div>

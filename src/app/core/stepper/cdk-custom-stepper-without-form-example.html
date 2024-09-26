@@ -1,0 +1,14 @@
+<example-custom-stepper class="width-full">
+  <form id="form" [formGroup]="registrationForm">
+    <cdk-step
+      formGroupName="favoriteCategory"
+      [stepControl]="registrationForm.get('favoriteCategory')!"
+    >
+      <app-movie [form]="registrationForm"></app-movie>
+    </cdk-step>
+    <cdk-step> <app-developer></app-developer> </cdk-step>fff
+    <cdk-step> <app-favorite></app-favorite> </cdk-step>
+    <cdk-step> <app-snack></app-snack> </cdk-step>
+    <cdk-step> <app-address></app-address> </cdk-step>
+  </form>
+</example-custom-stepper>
