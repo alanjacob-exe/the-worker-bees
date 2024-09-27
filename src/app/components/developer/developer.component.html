@@ -2,14 +2,25 @@
   <div class="dev-heading">
     How long have you been an angular developer?
     <div class="check-container">
-      <mat-radio-group
-        class="radio-container"
-        aria-label="How long have you been an angular developer?"
-      >
-        <mat-radio-button value="1">0-3 years</mat-radio-button>
-        <mat-radio-button value="2">4-6 years</mat-radio-button>
-        <mat-radio-button value="2">7 or more years</mat-radio-button>
-      </mat-radio-group>
+      <form [formGroup]="form">
+        <div formGroupName="experience">
+          <mat-radio-group
+            class="radio-container"
+            formControlName="years"
+            aria-label="How long have you been an angular developer?"
+          >
+            <ng-container *ngFor="let eachRadio of radioValues">
+              <mat-radio-button [value]="eachRadio.value">
+                <span class="radio-label">{{ eachRadio.label }}</span>
+              </mat-radio-button>
+            </ng-container>
+
+            <!-- <mat-radio-button value="1">0-3 years</mat-radio-button>
+            <mat-radio-button value="2">4-6 years</mat-radio-button>
+            <mat-radio-button value="3">7 or more years</mat-radio-button> -->
+          </mat-radio-group>
+        </div>
+      </form>
     </div>
   </div>
 </div>
