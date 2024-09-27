@@ -1,5 +1,17 @@
+$tablet: 768px
+$tablet-lg: 1024px
+$phone: 300
+
 .headerContainer
     border-bottom: 4px solid #EAECF0
     padding: 1.5rem 3.75rem
     img
         width: 200px
+
+// @media (min-width: $tablet) and (max-width: $tablet-lg)
+//     .grid-container
+        // padding: 0rem 1.5rem
+
+@media (min-width: $phone) and (max-width: $tablet)
+    .headerContainer
+        padding: 1rem 1.5rem !important
