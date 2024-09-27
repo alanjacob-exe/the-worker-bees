@@ -22,10 +22,8 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
   templateUrl: './movie.component.html',
   styleUrl: './movie.component.sass',
 })
-export class MovieComponent implements OnInit {
+export class MovieComponent {
   @Input() form!: FormGroup;
-
-  ngOnInit(): void {}
 
   genres: { value: string; label: string; key: string }[] = [
     { value: 'Action', label: 'Action', key: 'Action' },
