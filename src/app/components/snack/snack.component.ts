@@ -1,23 +1,26 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 
 @Component({
   selector: 'app-snack',
   standalone: true,
-  imports: [MatRadioModule, CommonModule],
+  imports: [MatRadioModule, CommonModule, ReactiveFormsModule],
   templateUrl: './snack.component.html',
   styleUrl: './snack.component.sass',
 })
 export class SnackComponent {
-  snacks = [
-    { value: '1', label: 'Popcorn' },
-    { value: '2', label: 'Nachos' },
-    { value: '3', label: 'Junior Mints' },
-    { value: '4', label: 'Milk Duds' },
-    { value: '5', label: 'Skittles' },
+  @Input() form!: FormGroup;
+
+  snacks: { value: string; label: string }[] = [
+    { value: 'Popcorn', label: 'Popcorn' },
+    { value: 'Nachos', label: 'Nachos' },
+    { value: 'Junior Mints', label: 'Junior Mints' },
+    { value: 'Milk Duds', label: 'Milk Duds' },
+    { value: 'Skittles', label: 'Skittles' },
     {
-      value: '6',
+      value: 'Arthouses',
       label:
         'I only watch Criterion Collection films at Arthouses that disallow snacks because there might be a crinkling sound that disrupts other patrons.',
     },

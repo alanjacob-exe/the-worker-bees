@@ -1,9 +1,10 @@
-<div class="dev-container">
-  <div class="dev-heading">
+<div class="dev-container" [formGroup]="form">
+  <div class="dev-heading" formGroupName="snack">
     What’s your favorite movie snack?
     <mat-radio-group
       class="check-container"
-      aria-label="How long have you been an angular developer?"
+      formControlName="favoriteSnack"
+      aria-label="What’s your favorite movie snack?"
     >
       <div *ngFor="let snack of snacks">
         <mat-radio-button [value]="snack.value">
