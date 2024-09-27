@@ -1,6 +1,6 @@
 .home-container
     width: 100%
-    // overflow: hidden
+    overflow: hidden
     height: 100%
     // padding: 0rem 3.75rem
     // background-color: #000
@@ -12,14 +12,16 @@
     top: 0
     left: 0
     width: 50%
-    height: fit-content
+    // height: 100%
     z-index: -1
 
 .hero-section
     display: flex
     width: 100%
-    height: 100%
+    // height: 100%
     flex-direction: row
+    border: 1px solid red
+    // overflow-y: hidden
 
 .caption
     width: 60%
@@ -71,14 +73,26 @@ $phone: 300px
     .home-container
         flex-direction: column
         // padding: 2rem 0rem
-        overflow-y: hidden
+        // overflow-y: scroll
+
+    .hero-section
+        height: 100%
+
+    .image
+        height: inherit
+
+    .caption
+        width: 80%
 
 @media (min-width: $phone) and (max-width: $tablet)
     .home-container
         flex-direction: column
+        overflow-y: auto
+
         // padding: 2rem 0rem
 
     .hero-section
+        height: 100%
         width: auto
         padding: 2rem 1.5rem
         flex-direction: column
@@ -95,6 +109,6 @@ $phone: 300px
         margin-top: 2rem
 
     .image
-        width: 100%
+        // width: 100%
         visibility: hidden
         // rotate: 90deg
