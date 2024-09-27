@@ -1,20 +1,18 @@
-import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { CdkStepper, CdkStepperModule } from '@angular/cdk/stepper';
 import { CommonModule, NgTemplateOutlet } from '@angular/common';
-import { MovieComponent } from '../../components/movie/movie.component';
-import { ButtonComponent } from '../button/button.component';
-import { Router } from '@angular/router';
+import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import {
   FormControl,
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
-  Validators,
 } from '@angular/forms';
+import { AddressComponent } from '../../components/address/address.component';
 import { DeveloperComponent } from '../../components/developer/developer.component';
 import { FavoriteComponent } from '../../components/favorite/favorite.component';
+import { MovieComponent } from '../../components/movie/movie.component';
 import { SnackComponent } from '../../components/snack/snack.component';
-import { AddressComponent } from '../../components/address/address.component';
+import { ButtonComponent } from '../button/button.component';
 
 /** @title A custom CDK stepper without a form */
 @Component({
