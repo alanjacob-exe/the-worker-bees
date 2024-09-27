@@ -1,4 +1,4 @@
-import { Component, forwardRef, OnInit } from '@angular/core';
+import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { CdkStepper, CdkStepperModule } from '@angular/cdk/stepper';
 import { CommonModule, NgTemplateOutlet } from '@angular/common';
 import { MovieComponent } from '../../components/movie/movie.component';
@@ -39,21 +39,25 @@ import { AddressComponent } from '../../components/address/address.component';
 export class CdkCustomStepperWithoutFormExample implements OnInit {
   registrationForm!: FormGroup;
 
+  handleFormSubmission(): void {
+    console.log('Form Values:', this.registrationForm.value);
+  }
+
   ngOnInit(): void {
     this.registrationForm = new FormGroup({
       favoriteCategory: new FormGroup({
-        Action: new FormControl(null),
+        Action: new FormControl(false),
         Western: new FormControl(false),
-        Horror: new FormControl(null),
-        Romantic: new FormControl(null),
-        Drama: new FormControl(null),
-        Comedy: new FormControl(null),
-        Thriller: new FormControl(null),
-        Kev: new FormControl(null),
-        Scifi: new FormControl(null),
-        Noir: new FormControl(null),
-        Fantasy: new FormControl(null),
-        None: new FormControl(null),
+        Horror: new FormControl(false),
+        Romantic: new FormControl(false),
+        Drama: new FormControl(false),
+        Comedy: new FormControl(false),
+        Thriller: new FormControl(false),
+        Kev: new FormControl(false),
+        Scifi: new FormControl(false),
+        Noir: new FormControl(false),
+        Fantasy: new FormControl(false),
+        None: new FormControl(false),
       }),
       experience: new FormGroup({
         years: new FormControl(null),
@@ -88,12 +92,23 @@ export class CdkCustomStepperWithoutFormExample implements OnInit {
   imports: [NgTemplateOutlet, CdkStepperModule, ButtonComponent, CommonModule],
 })
 export class CustomStepper extends CdkStepper {
+  @Input() onSubmit!: () => void;
   ngOnInit(): void {
-    this.selectedIndex = 0; // Set the first step as active
+    this.selectedIndex = 0;
     this.linear = true;
   }
 
   selectStepByIndex(index: number): void {
     this.selectedIndex = index;
+    if (index === 5) {
+      console.log('trigger');
+      this.submitForm();
+    }
+  }
+
+  submitForm(): void {
+    if (this.onSubmit) {
+      this.onSubmit();
+    }
   }
 }

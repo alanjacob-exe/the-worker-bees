@@ -1,12 +1,12 @@
 <section class="example-container">
   <div class="example-step-navigation-bar">
-    @for (step of steps; track step; let i = $index) {
-    <button
-      class="example-step"
-      [class.example-active]="selectedIndex >= i"
-      (click)="selectStepByIndex(i)"
-    ></button>
-    }
+    <ng-container *ngFor="let step of steps; let i = index">
+      <button
+        class="example-step"
+        [class.example-active]="selectedIndex >= i"
+        (click)="selectStepByIndex(i)"
+      ></button>
+    </ng-container>
   </div>
   <div class="step-indicator">
     {{ selectedIndex + 1 }} of {{ steps.length }}
@@ -25,6 +25,22 @@
     <div *ngIf="selectedIndex !== 0">
       <button class="link" cdkStepperPrevious>Previous Question</button>
     </div>
-    <button class="generic-button-styles primary" cdkStepperNext>Next</button>
+
+    <button
+      type="button"
+      *ngIf="selectedIndex < steps.length - 1"
+      class="generic-button-styles primary"
+      (click)="selectStepByIndex(selectedIndex + 1)"
+    >
+      Next
+    </button>
+
+    <button
+      *ngIf="selectedIndex === steps.length - 1"
+      class="generic-button-styles primary"
+      (click)="submitForm()"
+    >
+      Submit
+    </button>
   </div>
 </section>

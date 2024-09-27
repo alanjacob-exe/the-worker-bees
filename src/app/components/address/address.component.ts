@@ -12,6 +12,10 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 export class AddressComponent {
   @Input() form!: FormGroup;
 
+  submitForm(): void {
+    console.log(this.form.value);
+  }
+
   addressFields: { label: string; controlName: string; placeHolder: string }[] =
     [
       { label: 'Address 1', placeHolder: 'Address 1', controlName: 'address1' },
