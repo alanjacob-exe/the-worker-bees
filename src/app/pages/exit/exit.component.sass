@@ -1,0 +1,113 @@
+.home-container
+    width: 100%
+    overflow: hidden
+    height: 100%
+    // padding: 0rem 3.75rem
+    // background-color: #000
+    position: relative
+    display: flex
+
+.image
+    position: absolute
+    top: 0
+    left: 0
+    width: 50%
+    // height: 100%
+    z-index: -1
+
+.hero-section
+    display: flex
+    width: 100%
+    // height: 100%
+    flex-direction: row-reverse
+    // overflow-y: hidden
+
+.caption
+    width: 60%
+    gap: 2rem
+    display: flex
+    flex-direction: column
+    // border: 1px solid red
+
+    span
+        font-size: 2.5rem
+        font-family: Alda
+        line-height: 2.5rem
+    div
+        width: 90%
+        font-size: 1.25rem
+        font-family: Sofia
+
+.button-holder
+    display: flex
+    width: 100%
+    justify-content: flex-start
+
+.caption-container
+    width: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+
+    img
+        width: 25rem
+.hex-alt
+    // aspect-ratio: cos(30deg)
+    clip-path: polygon(-50% 50%,50% 100%,150% 50%,50% 0)
+
+.hex
+
+    rotate: 5deg
+    aspect-ratio: 1/cos(30deg)
+    clip-path: polygon(50% -50%,100% 50%,50% 150%,0 50%)
+    border-radius: 12px
+
+// .rotate-image
+//     rotate: 360deg
+$tablet: 768px
+$tablet-lg: 1024px
+$phone: 300px
+
+@media (min-width: $tablet) and (max-width: $tablet-lg)
+    .home-container
+        flex-direction: column
+        // padding: 2rem 0rem
+        // overflow-y: scroll
+
+    .hero-section
+        height: 100%
+
+    .image
+        height: inherit
+
+    .caption
+        width: 80%
+
+@media (min-width: $phone) and (max-width: $tablet)
+    .home-container
+        flex-direction: column
+        overflow-y: auto
+
+        // padding: 2rem 0rem
+
+    .hero-section
+        height: 100%
+        width: auto
+        padding: 2rem 1.5rem
+        flex-direction: column
+
+    .caption-container
+        width: 100%
+        // margin-top: 3rem
+
+        img
+            width: 15rem
+
+    .caption
+        width: 100%
+        margin-top: 2rem
+
+    .image
+        // width: 100%
+        visibility: hidden
+        // rotate: 90deg
