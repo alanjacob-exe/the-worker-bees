@@ -23,9 +23,12 @@ export class ButtonComponent {
   handleMouseClick(event: MouseEvent) {
     if (!this.isDisabled) {
       this.onClick.emit(event);
-    }
-    if (this.navigateTo) {
-      this.router.navigate([this.navigateTo]);
+      if (this.navigateTo) {
+        // need to have a bit of time to execute the onClick event before navigating when both parameters are present
+        setTimeout(() => {
+          this.router.navigate([this.navigateTo]);
+        }, 0);
+      }
     }
   }
   handleMouseOver(event: MouseEvent) {
