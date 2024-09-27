@@ -14,7 +14,7 @@ import {
 import { DeveloperComponent } from '../../components/developer/developer.component';
 import { FavoriteComponent } from '../../components/favorite/favorite.component';
 import { SnackComponent } from '../../components/snack/snack.component';
-import { AddressComponent } from "../../components/address/address.component";
+import { AddressComponent } from '../../components/address/address.component';
 
 /** @title A custom CDK stepper without a form */
 @Component({
@@ -33,8 +33,8 @@ import { AddressComponent } from "../../components/address/address.component";
     DeveloperComponent,
     FavoriteComponent,
     SnackComponent,
-    AddressComponent
-],
+    AddressComponent,
+  ],
 })
 export class CdkCustomStepperWithoutFormExample implements OnInit {
   registrationForm!: FormGroup;
@@ -54,6 +54,25 @@ export class CdkCustomStepperWithoutFormExample implements OnInit {
         Noir: new FormControl(null),
         Fantasy: new FormControl(null),
         None: new FormControl(null),
+      }),
+      experience: new FormGroup({
+        years: new FormControl(null),
+      }),
+      movie: new FormGroup({
+        movieName: new FormControl(''),
+        releaseYear: new FormControl(''),
+        alternateMovieName: new FormControl(''),
+        alternateMovieYear: new FormControl(''),
+      }),
+      snack: new FormGroup({
+        favoriteSnack: new FormControl(''),
+      }),
+      address: new FormGroup({
+        address1: new FormControl(''),
+        address2: new FormControl(''),
+        city: new FormControl(''),
+        state: new FormControl(''),
+        zip: new FormControl(''),
       }),
     });
   }

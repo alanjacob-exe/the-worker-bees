@@ -6,9 +6,29 @@
     >
       <app-movie [form]="registrationForm"></app-movie>
     </cdk-step>
-    <cdk-step> <app-developer></app-developer> </cdk-step>fff
-    <cdk-step> <app-favorite></app-favorite> </cdk-step>
-    <cdk-step> <app-snack></app-snack> </cdk-step>
-    <cdk-step> <app-address></app-address> </cdk-step>
+    <cdk-step
+      formGroupName="experience"
+      [stepControl]="registrationForm.get('experience')!"
+    >
+      <app-developer [form]="registrationForm"></app-developer>
+    </cdk-step>
+    <cdk-step
+      formGroupName="movie"
+      [stepControl]="registrationForm.get('movie')!"
+    >
+      <app-favorite [form]="registrationForm"></app-favorite>
+    </cdk-step>
+    <cdk-step
+      formGroupName="snack"
+      [stepControl]="registrationForm.get('snack')!"
+    >
+      <app-snack [form]="registrationForm"></app-snack>
+    </cdk-step>
+    <cdk-step
+      formGroupName="address"
+      [stepControl]="registrationForm.get('address')!"
+    >
+      <app-address [form]="registrationForm"></app-address>
+    </cdk-step>
   </form>
 </example-custom-stepper>
