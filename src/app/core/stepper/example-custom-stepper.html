@@ -34,13 +34,19 @@
     >
       Next
     </button>
-
-    <button
+    <generic-button
+      *ngIf="selectedIndex === steps.length - 1"
+      type="primary"
+      label="Submit"
+      navigateTo="/thank-you"
+      (click)="submitForm()"
+    ></generic-button>
+    <!-- <button
       *ngIf="selectedIndex === steps.length - 1"
       class="generic-button-styles primary"
       (click)="submitForm()"
     >
       <a class="no-style" href="/thank-you">Submit</a>
-    </button>
+    </button> -->
   </div>
 </section>
