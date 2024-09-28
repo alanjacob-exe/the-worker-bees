@@ -34,7 +34,7 @@ import { ButtonComponent } from '../button/button.component';
     AddressComponent,
   ],
 })
-export class CdkCustomStepperWithoutFormExample implements OnInit {
+export class CdkCustomStepper implements OnInit {
   registrationForm!: FormGroup;
 
   handleFormSubmission(): void {
